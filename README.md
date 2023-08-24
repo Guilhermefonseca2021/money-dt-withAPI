@@ -1,27 +1,20 @@
-# React + TypeScript + Vite
+# Projeto de Plano de Carteira 💼📊
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de uma aplicação de Plano de Carteira que utiliza tecnologias como Hooks, Tabela, TypeScript, React e Styled Components. O objetivo do projeto é permitir que os usuários possam gerenciar suas carteiras de investimentos de forma prática e eficiente.
 
-Currently, two official plugins are available:
+## Tecnologias de Programação 👨‍💻🔧
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React: Uma biblioteca JavaScript para construção de interfaces de usuário.
+- TypeScript: Uma linguagem de programação que adiciona tipagem estática ao JavaScript.
+- Hooks: Uma funcionalidade do React que permite utilizar recursos de estado e ciclo de vida em componentes funcionais.
+- Styled Components: Uma biblioteca para estilização de componentes React utilizando CSS-in-JS.
+  
+## Ferramentas do React 🛠️
 
-## Expanding the ESLint configuration
+- Tabela: Utilizada para exibir e organizar os dados da carteira de investimentos.
+  
+## Como executar o projeto 🚀
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<a href="https://money-dt-with-api.vercel.app/">Clique aqui para testar!</a>
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<img width="962" alt="dt-money-dash" src="https://github.com/Guilhermefonseca2021/money-dt-withAPI/assets/92196697/192be4c5-99a1-421d-85f4-45d9798697f1">
