@@ -12,6 +12,7 @@ Este é um projeto de uma aplicação de Plano de Carteira que utiliza tecnologi
 ## Ferramentas do React 🛠️
 
 - Tabela: Utilizada para exibir e organizar os dados da carteira de investimentos.
+<<<<<<< HEAD
 # Visando leitor para acessibildiade a demais grupos de pessoas(o overlay box usa a biblioteca Radix ui )
 
    position: fixed;
@@ -26,3 +27,11 @@ button com font size ou line height zero para o outline nao ficar com espaco sob
 
 <img width="962" alt="dt-money-dash" src="https://github.com/Guilhermefonseca2021/money-dt-withAPI/assets/92196697/192be4c5-99a1-421d-85f4-45d9798697f1">
 
+=======
+  
+## Como executar o projeto 🚀
+
+<a href="https://money-dt-with-api.vercel.app/">Clique aqui para testar!</a>
+
+<img width="962" alt="dt-money-dash" src="https://github.com/Guilhermefonseca2021/money-dt-withAPI/assets/92196697/192be4c5-99a1-421d-85f4-45d9798697f1">
+>>>>>>> ad086e61d69cf02a09f8ee7da2b7baf789b6a33e
