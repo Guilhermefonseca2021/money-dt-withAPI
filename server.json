@@ -1,0 +1,20 @@
+{
+    "transactions": [
+    {
+        "id": 1,
+        "description": "Desenvolvimento de site",
+        "type": "income",
+        "category": "venda",
+        "price": 1400,
+        "createAt": "2023-08-26T23:40:33.088Z"
+    },
+    {
+      "id": 2,
+      "description": "aparelho ortodontico",
+      "type": "outcome",
+      "category": "cuidados pessoais",
+      "price": 48,
+      "createAt": "2023-08-26T23:30:40.088Z"
+  }
+    ]
+}

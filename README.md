@@ -11,27 +11,16 @@ Este é um projeto de uma aplicação de Plano de Carteira que utiliza tecnologi
   
 ## Ferramentas do React 🛠️
 
-- Tabela: Utilizada para exibir e organizar os dados da carteira de investimentos.
-<<<<<<< HEAD
-# Visando leitor para acessibildiade a demais grupos de pessoas(o overlay box usa a biblioteca Radix ui )
-
-   position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-button com font size ou line height zero para o outline nao ficar com espaco sobrando alem do icons
+- Tabela: Utilizada para exibir e organizar os dados da carteira de investimentos. 
+- dependencias: npm 
+- npm i --no-fund json-server -D
+- para rodar server: npx json-server server.json (por padrao roda na porta 3000)
+- npx json-server server.json -p 3333 (comando para abrir o server em qualquer outra porta que n estamos usando no caso 3333 por padrao nao monitora nao fica assistindo os eventos de mudanca na porta)
+- npx json-server server.json -p 3333 -w ( para watch atualiazar por si so as mudancas que for fazendo )
+- npx json-server server.json -p 3333 -w -d 500 (para simular o delay dapagina em producao)
   
 ## Como executar o projeto 🚀
 
 <a href="https://money-dt-with-api.vercel.app/">Clique aqui para testar!</a>
 
 <img width="962" alt="dt-money-dash" src="https://github.com/Guilhermefonseca2021/money-dt-withAPI/assets/92196697/192be4c5-99a1-421d-85f4-45d9798697f1">
-
-=======
-  
-## Como executar o projeto 🚀
-
-<a href="https://money-dt-with-api.vercel.app/">Clique aqui para testar!</a>
-
-<img width="962" alt="dt-money-dash" src="https://github.com/Guilhermefonseca2021/money-dt-withAPI/assets/92196697/192be4c5-99a1-421d-85f4-45d9798697f1">
->>>>>>> ad086e61d69cf02a09f8ee7da2b7baf789b6a33e

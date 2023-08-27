@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 import * as Dialog from '@radix-ui/react-dialog'
+// forma para enviar nossos dados como radio 'opcoes' do form enviadas pelo user
+import * as RadioGroup from '@radix-ui/react-radio-group';
 
 export const Overlay = styled(Dialog.Overlay)`
     position: fixed;
@@ -58,7 +60,7 @@ export const Content = styled(Dialog.Content)`
     }
 `;
 
-export const TransationType = styled.div`
+export const TransationType = styled(RadioGroup.Root)`
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -69,7 +71,7 @@ interface TransationTypeButtonProps {
     variant: 'income' | 'outcome';
 }
 
-export const TransationTypeButton = styled.button<TransationTypeButtonProps>`
+export const TransationTypeButton = styled(RadioGroup.Item)<TransationTypeButtonProps>`
     background: ${props => props.theme['gray-700']};
     padding: 1rem;
     width: 100%;
@@ -84,6 +86,20 @@ export const TransationTypeButton = styled.button<TransationTypeButtonProps>`
 
     svg {
         color: ${props => props.variant == 'income' ? props.theme['green-500'] : props.theme['red-500']};
+    }
+
+    &[data-state='unchecked']:hover {
+        transition: all .2s;
+        background: ${props => props.variant == 'income' ? props.theme['gray-600'] : props.theme['gray-600']};
+    }
+
+    &[data-state='checked'] {
+        ${props => props.theme.white};
+        background: ${props => props.variant == 'income' ? props.theme['green-500'] : props.theme['red-500']};
+
+        svg {
+            color: ${props => props.theme.white};
+        }
     }
 `;
 
