@@ -23,4 +23,6 @@ Este é um projeto de uma aplicação de Plano de Carteira que utiliza tecnologi
 
 <a href="https://money-dt-with-api.vercel.app/">Clique aqui para testar!</a>
 
-<img width="962" alt="dt-money-dash" src="https://github.com/Guilhermefonseca2021/money-dt-withAPI/assets/92196697/192be4c5-99a1-421d-85f4-45d9798697f1">
+![dashboard (1)](https://github.com/Guilhermefonseca2021/money-dt-withAPI/assets/92196697/a9df9833-5562-441e-ae84-27fca544a176)
+
+![cadastrar-transacao](https://github.com/Guilhermefonseca2021/money-dt-withAPI/assets/92196697/591a95f3-2876-46d8-9268-7f8d228432df)
