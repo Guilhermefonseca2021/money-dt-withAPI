@@ -20,9 +20,11 @@ Este é um projeto de uma aplicação de Plano de Carteira que utiliza tecnologi
 - npx json-server server.json -p 3333 -w -d 500 (para simular o delay dapagina em producao)
 - npm i react-hook-form zod            (compartilhar estado do formulario e validacao com zod)
 - npm i @hookform/resolvers
-- 
+- npm install axios    (api server)
   
 ## Como executar o projeto 🚀
+
+copie no seu vs code ou bloco de comandos e execute o comando npm run dev e npm run dev:server, e instale as depencias acima;
 
 <a href="https://money-dt-with-api.vercel.app/">Clique aqui para testar!</a>
 

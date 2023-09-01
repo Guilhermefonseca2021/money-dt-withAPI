@@ -25,7 +25,10 @@ export function NewTransationModal() {
         handleSubmit,  // funcao do useform para butao enviar estados
         formState: { isSubmitting }
     } = useForm<NewTransactionFormInputs>({
-        resolver: zodResolver(newTransactionFormSchema)
+        resolver: zodResolver(newTransactionFormSchema),
+        defaultValues: {
+            type: 'income'
+        }
     })
 
     async function handleCreateNewTransaction (data: NewTransactionFormInputs) {
@@ -72,12 +75,12 @@ export function NewTransationModal() {
                         <Controller   
                             control={control} // propriedade q nos declaramos no estado
                             name='type'       // aqui ja ver quais propriedades que vamos controlar
-                            render={(props) => {   // traz uma funcao q retorna qual o conteudo relacionado ao campo type
-                                console.log(props)
+                            render={({ field }) => {   // traz uma funcao q retorna qual o conteudo fieldstate relacionado ao campo type
+                                console.log(field)
 
                                 return (
-                                    // onchange traz o valor do type
-                                    <TransationType onValueChange={console.log}>  
+                                    // onvaluechange traz o valor do type
+                                    <TransationType onValueChange={field.onChange} value={field.value}>  
                             
                                         <TransationTypeButton variant='income' value='income'>
                                             <ArrowCircleUp size={24} />
