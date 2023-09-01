@@ -18,6 +18,9 @@ Este é um projeto de uma aplicação de Plano de Carteira que utiliza tecnologi
 - npx json-server server.json -p 3333 (comando para abrir o server em qualquer outra porta que n estamos usando no caso 3333 por padrao nao monitora nao fica assistindo os eventos de mudanca na porta)
 - npx json-server server.json -p 3333 -w ( para watch atualiazar por si so as mudancas que for fazendo )
 - npx json-server server.json -p 3333 -w -d 500 (para simular o delay dapagina em producao)
+- npm i react-hook-form zod            (compartilhar estado do formulario e validacao com zod)
+- npm i @hookform/resolvers
+- 
   
 ## Como executar o projeto 🚀
 

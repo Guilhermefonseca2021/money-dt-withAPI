@@ -18,8 +18,7 @@ export const HeaderContent = styled.div`
     font-size: 2rem;
 
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-end;
 `;
 
 export const NewTransactionButton = styled.button`

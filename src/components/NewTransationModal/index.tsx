@@ -1,9 +1,39 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { Overlay, Content, CloseButton, TransationType, TransationTypeButton} from './styles'
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
+import { Controller, useForm } from "react-hook-form";
+import * as zod from 'zod'
+// zod tambem funciona tbm para definicao de schema qual q é o fromato do objeto que evnio pelo usuario
+import { zodResolver } from '@hookform/resolvers/zod'
 
+// fazemos a tipagem com zod de como devemos receber do user 
+const newTransactionFormSchema = zod.object ({
+    description: zod.string(),
+    price: zod.number(),
+    category: zod.string(),
+    // enum zod mostra que so pode andar dentro de certas opcoes por array
+    type: zod.enum(['income', 'outcome']),
+})
+
+// tipagem para voce ver as propriedades que inferem  nossa constante no zod
+type NewTransactionFormInputs = zod.infer<typeof newTransactionFormSchema>;
 
 export function NewTransationModal() {
+    const { 
+        control,       // estado react hook form (monitorar sempre q for atualizado) q nao vem de input nativo do html
+        register,      // estado que useform recebe com a formacao que INFERIMOS
+        handleSubmit,  // funcao do useform para butao enviar estados
+        formState: { isSubmitting }
+    } = useForm<NewTransactionFormInputs>({
+        resolver: zodResolver(newTransactionFormSchema)
+    })
+
+    async function handleCreateNewTransaction (data: NewTransactionFormInputs) {
+        await new Promise (resolve => setTimeout(resolve, 2000));
+
+        console.log(data);
+    }
+
     return (
         <div>
             <Dialog.Portal>
@@ -18,24 +48,52 @@ export function NewTransationModal() {
                         <X size={24} />
                     </CloseButton>
 
-                    <form action=''>
-                        <input type='text' placeholder='Descrição' />
-                        <input type='number' placeholder='Preço' />
-                        <input type='text' placeholder='Categoria' />
+                    <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+                        <input 
+                            type='text' 
+                            placeholder='Descrição' 
+                            required
+                            // react rook form usa register funciona p compartilhar estados com useform
+                            {...register('description')}
+                        />
+                        <input 
+                            type='number' 
+                            placeholder='Preço' 
+                            required    // valueAsNumber converte valor do input para numero ao handlesubmit
+                            {...register('price', { valueAsNumber: true})}
+                        />
+                        <input 
+                            type='text' 
+                            placeholder='Categoria'
+                            required 
+                            {...register('category')}
+                        />
 
-                        <TransationType>
+                        <Controller   
+                            control={control} // propriedade q nos declaramos no estado
+                            name='type'       // aqui ja ver quais propriedades que vamos controlar
+                            render={(props) => {   // traz uma funcao q retorna qual o conteudo relacionado ao campo type
+                                console.log(props)
+
+                                return (
+                                    // onchange traz o valor do type
+                                    <TransationType onValueChange={console.log}>  
                             
-                            <TransationTypeButton variant='income' value='income'>
-                                <ArrowCircleUp size={24} />
-                                Entrada 
-                            </TransationTypeButton>
+                                        <TransationTypeButton variant='income' value='income'>
+                                            <ArrowCircleUp size={24} />
+                                            Entrada 
+                                        </TransationTypeButton>
 
-                            <TransationTypeButton variant='outcome' value='outcome'> 
-                                <ArrowCircleDown size={24} /> 
-                                Saída 
-                            </TransationTypeButton>
-                        </TransationType>
-                        <button type='submit'>
+                                        <TransationTypeButton variant='outcome' value='outcome'> 
+                                            <ArrowCircleDown size={24} /> 
+                                            Saída 
+                                        </TransationTypeButton>
+                                    </TransationType>
+                                )
+                            }}
+                        />
+
+                        <button type='submit' disabled={isSubmitting}>
                             Cadastrar
                         </button>
                     </form>
