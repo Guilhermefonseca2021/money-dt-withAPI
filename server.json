@@ -1,12 +1,12 @@
 {
-    "transactions": [
+  "transactions": [
     {
-        "id": 1,
-        "description": "Desenvolvimento de site",
-        "type": "income",
-        "category": "venda",
-        "price": 3400,
-        "createAt": "2023-08-26T23:40:33.088Z"
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "venda",
+      "price": 3400,
+      "createAt": "2023-08-26T23:40:33.088Z"
     },
     {
       "id": 2,
@@ -17,12 +17,36 @@
       "createAt": "2023-08-26T23:30:40.088Z"
     },
     {
-        "id": 3,
-        "description": "Ignite Rocketseat",
-        "type": "outcome",
-        "category": "curso",
-        "price": 1790,
-        "createAt": "2023-08-26T13:24:40.088Z"
-      }
-    ]
+      "id": 3,
+      "description": "Ignite Rocketseat",
+      "type": "outcome",
+      "category": "curso",
+      "price": 1790,
+      "createAt": "2023-08-26T13:24:40.088Z"
+    },
+    {
+      "description": "vender roupa",
+      "price": 2323,
+      "category": "ecommerce",
+      "type": "income",
+      "createAt": "2023-09-02T21:30:33.974Z",
+      "id": 4
+    },
+    {
+      "description": "iogurte",
+      "price": 2344,
+      "category": "alimentacao",
+      "type": "outcome",
+      "createAt": "2023-09-02T22:08:15.776Z",
+      "id": 5
+    },
+    {
+      "description": "compra de uma baleia",
+      "price": 233,
+      "category": "animal",
+      "type": "outcome",
+      "createAt": "2023-09-02T22:09:13.482Z",
+      "id": 6
+    }
+  ]
 }

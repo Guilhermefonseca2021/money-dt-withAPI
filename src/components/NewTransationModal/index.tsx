@@ -5,6 +5,8 @@ import { Controller, useForm } from "react-hook-form";
 import * as zod from 'zod'
 // zod tambem funciona tbm para definicao de schema qual q é o fromato do objeto que evnio pelo usuario
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useContext } from 'react';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
 
 // fazemos a tipagem com zod de como devemos receber do user 
 const newTransactionFormSchema = zod.object ({
@@ -19,11 +21,13 @@ const newTransactionFormSchema = zod.object ({
 type NewTransactionFormInputs = zod.infer<typeof newTransactionFormSchema>;
 
 export function NewTransationModal() {
+    const { createTransactions } = useContext(TransactionsContext)
     const { 
         control,       // estado react hook form (monitorar sempre q for atualizado) q nao vem de input nativo do html
         register,      // estado que useform recebe com a formacao que INFERIMOS
         handleSubmit,  // funcao do useform para butao enviar estados
-        formState: { isSubmitting }
+        formState: { isSubmitting },
+        reset,
     } = useForm<NewTransactionFormInputs>({
         resolver: zodResolver(newTransactionFormSchema),
         defaultValues: {
@@ -32,9 +36,22 @@ export function NewTransationModal() {
     })
 
     async function handleCreateNewTransaction (data: NewTransactionFormInputs) {
-        await new Promise (resolve => setTimeout(resolve, 2000));
+        // await api.post('transactions', {
+        //     discription: data.description,
+        //     category: data.category,
+        //     price: data.price,
+        //     type: data.type
+        // })
+        const { description, price, category, type } = data;
 
-        console.log(data);
+        await createTransactions({
+            description,
+            price,
+            category,
+            type,
+        })
+
+        reset()
     }
 
     return (

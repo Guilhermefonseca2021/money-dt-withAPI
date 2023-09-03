@@ -8,7 +8,6 @@ import { TransactionsContext } from "../../../../contexts/TransactionsContext";
 
 const searchFormSchema = zod.object({
     query: zod.string(),
-
 })
 
 // o infer so para retornar qual a typagem do zod nos campos para gente

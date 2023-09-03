@@ -1,0 +1,3 @@
+{
+  "extends": "@rocketseat/eslint-congig/react"
+}
